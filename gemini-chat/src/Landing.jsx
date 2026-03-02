@@ -200,13 +200,13 @@ export default function Landing() {
 
         /* ── HERO SECTION ── */
         .hero-section {
-          position: relative; z-index: 10;
-          height: calc(100vh - 88px);
+        position: relative; z-index: 10;
+         height: 100vh;
           display: flex; flex-direction: column;
           justify-content: flex-end;
-          padding: 0 48px 56px;
-          margin-top: -88px; /* pull up behind sticky nav */
-        }
+         padding: 0 48px 56px;
+         margin-top: -88px;
+}
 
         /* BIG TITLE */
         .title-wrap {
