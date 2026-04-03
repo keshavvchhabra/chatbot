@@ -1,13 +1,27 @@
-import 'dotenv/config';
-import { GoogleGenAI } from "@google/genai";
-const ai = new GoogleGenAI({GEMINI_API_KEY:process.env.GEMINI_API_KEY});
+const exampleRequests = {
+  register: {
+    method: 'POST',
+    url: 'http://localhost:3000/api/auth/register',
+    body: {
+      email: 'user@example.com',
+      password: 'strongpassword123',
+    },
+  },
+  login: {
+    method: 'POST',
+    url: 'http://localhost:3000/api/auth/login',
+    body: {
+      email: 'user@example.com',
+      password: 'strongpassword123',
+    },
+  },
+  profile: {
+    method: 'GET',
+    url: 'http://localhost:3000/api/profile',
+    headers: {
+      Authorization: 'Bearer <jwt-token>',
+    },
+  },
+};
 
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
-    contents: "Explain how AI works in a few words",
-  });
-  console.log(response.text);
-}
-
-main();
+console.log(JSON.stringify(exampleRequests, null, 2));
